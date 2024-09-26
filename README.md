@@ -2,20 +2,27 @@
 
 ### Overview
 
-- Intro
-- Figma
-- Images
+### Project Name:
 
-**Intro**
+Spots
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+### Description:
 
-**Figma**
+This project is designed to showcase an interactive social media web application that allows users to add and remove their photos, interact by liking others' images, and make a few minor adjustments to their profile.
 
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+### Technologies and Techniques Used:
 
-**Images**
+- HTML5
+- CSS3
+- Grid Layout
+- Media Queries for responsive design
+- BEM methodology for structuring CSS classes
+- Figma for design references
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+### Project Features:
 
-Good luck and have fun!
+- A fully responsive web application that adjusts seamlessly to different screen sizes.
+- Organized and structured code using BEM methodology.
+- High-quality images optimized for faster load times.
+
+### Link To Project:
