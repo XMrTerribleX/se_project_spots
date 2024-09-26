@@ -26,3 +26,9 @@ This project is designed to showcase an interactive social media web application
 - High-quality images optimized for faster load times.
 
 ### Link To Project:
+
+https://xmrterriblex.github.io/se_project_spots/
+
+### Link To Project Video:
+
+https://go.screenpal.com/watch/cZQOfaVSghX
