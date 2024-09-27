@@ -27,7 +27,6 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
 }
@@ -66,6 +65,11 @@
   justify-content: center;
   align-items: center;
   text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.profile__edit-button:hover {
+  opacity: 100%;
 }
 
 .profile__add-button {
@@ -85,6 +89,11 @@
   justify-content: center;
   align-items: center;
   text-wrap: nowrap;
+  cursor: pointer;
+}
+
+.profile__add-button:hover {
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
