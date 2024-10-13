@@ -13,7 +13,7 @@
   visibility: hidden;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
 }
 
@@ -36,6 +36,10 @@
   width: 40px;
   height: 40px;
   border: none;
+}
+
+.modal__close-button:hover {
+  background-image: url(../images/Property\ 1=Variant2.png);
 }
 
 .modal__title {
