@@ -6,7 +6,7 @@
   border-radius: 8px;
 }
 
-.card__content {
+.card__footer {
   padding: 12px 0 4px 0;
   display: flex;
   align-items: center;
