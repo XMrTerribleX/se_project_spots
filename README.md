@@ -14,6 +14,7 @@ This project is designed to showcase an interactive social media web application
 
 - HTML5
 - CSS3
+- Javascript
 - Grid Layout
 - Media Queries for responsive design
 - BEM methodology for structuring CSS classes
