@@ -59,7 +59,7 @@
 }
 
 .modal__close-button {
-  background-image: url("../images/Close\ Icon.png");
+  background-image: url("../images/close-icon.svg");
   background-size: contain;
   background-color: #ffffff;
   position: absolute;
@@ -68,14 +68,15 @@
   width: 40px;
   height: 40px;
   border: none;
+  cursor: pointer;
 }
 
 .modal__close-button:hover {
-  background-image: url("../images/Property\ 1=Variant2.png");
+  background-image: url("../images/close-icon-hover.svg");
 }
 
 .modal__close-button_type_preview {
-  background-image: url("../images/Close-Icon-Light.png");
+  background-image: url("../images/close-icon-light.svg");
   top: 0px;
   right: -52.5px;
   opacity: 1;
@@ -122,6 +123,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
