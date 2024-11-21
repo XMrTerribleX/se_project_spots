@@ -76,7 +76,7 @@
 }
 
 .modal__close-button_type_preview {
-  background-image: url("../images/close-icon-light.svg");
+  background-image: url("../images/close-icon-preview.svg");
   top: 0px;
   right: -52.5px;
   opacity: 1;
@@ -135,6 +135,10 @@
     padding: 12px;
   }
 
+  .modal__container_type_preview {
+    padding: 0;
+  }
+
   .modal__close-button {
     top: 12px;
     right: 12px;
@@ -160,7 +164,7 @@
   .modal__close-button_type_preview {
     position: absolute;
     right: 0px;
-    top: -50px;
+    top: -40px;
   }
 
   .modal__image {
