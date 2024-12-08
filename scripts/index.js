@@ -53,6 +53,7 @@ const profileModalDescriptionInput = editProfileModal.querySelector(
 //add card modal
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
+const cardSubmitBtn = cardModal.querySelector(".modal__submit-button");
 const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
@@ -68,6 +69,21 @@ const previewModalCloseButton = previewModal.querySelector(
 //card elements
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
+
+//Modal open/close functions
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+  document.addEventListener("keydown", handleEscClose);
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  modal.removeEventListener("click", handleOverlayModalClose);
+  modal.removeEventListener("keydown", handleEscClose);
+}
+
+//find all close buttons
+/*const closeButtons = document.querySelectorAll(".modal__close-button");*/
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content
@@ -101,20 +117,10 @@ function getCardElement(data) {
   return cardElement;
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-}
-
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-}
-
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = profileModalNameInput.value;
   profileDescription.textContent = profileModalDescriptionInput.value;
-  /* Research - Not Working
-  evt.target.reset();*/
   closeModal(editProfileModal);
 }
 
@@ -124,14 +130,32 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
+  disableButton(cardSubmitBtn, settings);
   closeModal(cardModal);
 }
 
 profileEditButton.addEventListener("click", () => {
   profileModalNameInput.value = profileName.textContent;
   profileModalDescriptionInput.value = profileDescription.textContent;
+  resetValidation(
+    editProfileModal,
+    [profileModalNameInput, profileModalDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
+
+/*closeButtons.forEach((button) => {
+  // Find the closest popup only once
+  const popup = button.closest('.modal');
+  // Set the listener
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+closeButtons.forEach((button) => {
+  const popup = button.closest(".modal");
+  button.addEventListener("click", () => closePopup(popup));
+});*/
 
 profileModalCloseButton.addEventListener("click", () => {
   closeModal(editProfileModal);
@@ -149,20 +173,33 @@ previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
 
+//Event listeners for form submission
 profileFormElement.addEventListener("submit", handleEditProfileSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
+//Render initial cards
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
 });
 
-/* Find all close buttons
-const closeButtons = document.querySelectorAll('.modal__close-button');
+//Close modal by clicking outside the modal container
+function handleOverlayModalClose() {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach((modal) => {
+    modal.addEventListener("click", function (evt) {
+      if (!evt.target.closest(".modal__container")) {
+        closeModal(modal);
+      }
+    });
+  });
+}
+handleOverlayModalClose();
 
-closeButtons.forEach((button) => {
-  // Find the closest popup only once
-  const popup = button.closest('.modal');
-  // Set the listener
-  button.addEventListener('click', () => closePopup(popup));
-}); */
+// Close modal by using the Escape key
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    closeModal(modal);
+  }
+}

@@ -112,6 +112,18 @@
   font-size: 20px;
   line-height: 1;
   color: #212121;
+  cursor: pointer;
+}
+
+.modal__input_type_error {
+  border: 1px solid #ff0000;
+  opacity: 60%;
+}
+
+.modal__error {
+  display: block;
+  color: #ff0000;
+  opacity: 70%;
 }
 
 .modal__submit-button {
@@ -124,6 +136,11 @@
   font-size: 16px;
   line-height: 1;
   cursor: pointer;
+}
+
+.modal__submit-button--disabled {
+  background-color: #212121;
+  opacity: 50%;
 }
 
 @media screen and (max-width: 627px) {
