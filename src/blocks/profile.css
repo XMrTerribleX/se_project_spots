@@ -4,8 +4,39 @@
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
 
-.profile__avatar {
+.profile__avatar-container {
+  position: relative;
   margin-right: 20px;
+}
+
+.avatar__edit-btn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  visibility: hidden;
+  padding: 0 0 12px;
+}
+
+.profile__avatar-container:hover .avatar__edit-btn {
+  visibility: visible;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #a4a4a4;
+  background-image: url("../images/Ellipse4.png"), url("../images/Ellipse5.png");
+  background-repeat: no-repeat;
+  background-position: center 40%, bottom;
+}
+
+.avatar__edit-btn::after {
+  content: "Edit Avatar";
+  color: #fff;
+  margin-left: 8px;
+}
+
+.profile__avatar {
   border-radius: 8px;
   object-fit: cover;
 }
@@ -21,7 +52,7 @@
   color: #212121;
   font-weight: 500;
   font-size: 32px;
-  line-height: 1;
+  line-height: 1.2;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -31,12 +62,12 @@
 }
 
 .profile__description {
-  margin: 0;
+  margin: 0 0 4px;
   color: #212121;
   opacity: 70%;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.2;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
@@ -103,11 +134,44 @@
     text-align: center;
     padding-top: 20px;
   }
+
+  .profile__avatar-container {
+    margin: 0 0 0;
+  }
+
+  .avatar__edit-btn {
+    visibility: visible;
+    position: absolute;
+    height: 23px;
+    width: 23px;
+    bottom: 20px;
+    right: 2px;
+    border-radius: 6px;
+    background-color: #212121;
+    opacity: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+  }
+
+  #pencil-image-light {
+    width: 15px;
+    height: 15px;
+    display: block;
+    margin-left: 8px;
+  }
+
+  .avatar__edit-btn::after {
+    content: "";
+  }
+
   .profile__avatar {
     margin: 0 0 12px;
     height: 80px;
     width: 80px;
   }
+
   .profile__name {
     margin: 0 0 6px;
     font-size: 20px;
