@@ -61,9 +61,7 @@ const profileDescription = document.querySelector(".profile__description");
 // Edit form elements
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const profileFormElement = editProfileModal.querySelector(".modal__form");
-const profileModalCloseButton = editProfileModal.querySelector(
-  ".modal__close-button"
-);
+
 const profileModalNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -75,7 +73,8 @@ const profileModalDescriptionInput = editProfileModal.querySelector(
 const cardModal = document.querySelector("#add-card-modal");
 const cardForm = cardModal.querySelector(".modal__form");
 const cardSubmitBtn = cardModal.querySelector(".modal__submit-button");
-const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
+
+// const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 
@@ -83,26 +82,17 @@ const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const avatarModal = document.querySelector("#avatar-modal");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const avatarSubmitBtn = avatarModal.querySelector(".modal__submit-button");
-const avatarModalCloseButton = avatarModal.querySelector(
-  ".modal__close-button"
-);
 const avatarInput = avatarModal.querySelector("#profile-avatar-input");
 
 // Delete form elements
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const deleteModalCancelBtn = deleteModal.querySelector(".modal__cancel-button");
-const deleteModalCloseButton = deleteModal.querySelector(
-  ".modal__close-button"
-);
 
 // Preview image popup elements
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
-const previewModalCloseButton = previewModal.querySelector(
-  ".modal__close-button_type_preview"
-);
 
 // Card elements
 const cardTemplate = document.querySelector("#card-template");
@@ -291,15 +281,6 @@ profileFormElement.addEventListener("submit", handleEditProfileSubmit);
 cardForm.addEventListener("submit", handleCardSubmit);
 avatarForm.addEventListener("submit", handleAvatarSubmit);
 deleteForm.addEventListener("submit", handleDeleteSubmit);
-cardLinkInput.addEventListener("keydown", handleEnterKey);
-cardNameInput.addEventListener("keydown", handleEnterKey);
-
-// Form submission with the Enter key
-function handleEnterKey(evt) {
-  if (evt.key === "Enter") {
-    cardSubmitBtn.click();
-  }
-}
 
 //Close modal by clicking outside the modal container
 function handleOverlayModalClose() {

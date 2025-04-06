@@ -24,10 +24,10 @@
   visibility: visible;
   cursor: pointer;
   border-radius: 8px;
-  background-color: #a4a4a4;
-  background-image: url("../images/Ellipse4.png"), url("../images/Ellipse5.png");
-  background-repeat: no-repeat;
-  background-position: center 40%, bottom;
+  background-color: #000000;
+  opacity: 50%;
+  width: 190px;
+  height: 190px;
 }
 
 .avatar__edit-btn::after {
@@ -39,6 +39,8 @@
 .profile__avatar {
   border-radius: 8px;
   object-fit: cover;
+  width: 190px;
+  height: 190px;
 }
 
 .profile__column {
@@ -120,6 +122,7 @@
   align-items: center;
   text-wrap: nowrap;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .profile__add-button:hover {
