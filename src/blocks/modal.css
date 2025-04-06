@@ -82,14 +82,16 @@
 }
 
 .modal__close-button_type_preview {
-  background-image: url("../images/close-icon-preview.svg");
+  background-image: url("../images/close-preview-icon.png");
+  background-color: transparent;
   top: 0px;
   right: -52.5px;
   opacity: 1;
 }
 
 .modal__close-button_type_delete {
-  background-image: url("../images/close-icon-delete1.png");
+  background-image: url("../images/close-preview-icon.png");
+  background-color: transparent;
   top: 0px;
   right: -52.5px;
   opacity: 1;
